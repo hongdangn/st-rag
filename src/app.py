@@ -4,15 +4,16 @@ from vector_store import create_vector_store
 from loader import pdfloader_chunker
 from qa import QuestionAnswer
 
-genai.configure(api_key="AIzaSyC-45MSDZKaXsINcdEf3gwx8ozNnypdeLw")
-
 # Page title
 st.set_page_config(page_title='🦜🔗 Ask the PDF App')
 st.title('🦜🔗 Ask the Doc App')
 
 with st.sidebar:
-    st.header("Please upload a PDF file.")
-    uploaded_file = st.file_uploader('Choose a PDF file', type='pdf')   
+    uploaded_file = st.file_uploader('Choose a PDF file', type='pdf')  
+    gemini_api_key =  st.text_input('Gemini API Key', type='password')
+
+if gemini_api_key:
+    genai.configure(api_key=gemini_api_key)
 
 if 'current_file_name' not in st.session_state:
     st.session_state.current_file_name = None
