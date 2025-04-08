@@ -1,4 +1,5 @@
 google-generativeai
+FlagEmbedding
 langchain
 langchain-community
 os
