@@ -1,5 +1,4 @@
 google-generativeai
-FlagEmbedding
 langchain
 langchain-community
 rank_bm25
