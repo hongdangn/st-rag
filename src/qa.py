@@ -1,5 +1,5 @@
 from retriever import BM25Retriever, SemanticRetriever, HybridRetriever
-from reranker import Ranker
+# from reranker import Ranker
 from prompter import formulate_prompt
 import google.generativeai as genai
 
@@ -10,7 +10,7 @@ class QuestionAnswer:
             topks=[2, 3]
         )
 
-        self.reranker = Ranker(topk=3)
+        # self.reranker = Ranker(topk=3)
         generation_config = {
             "temperature": 0.9,
             "top_p": 1,
@@ -22,8 +22,8 @@ class QuestionAnswer:
                                        generation_config=generation_config,)
 
     def get_final_prompt(self, query):
-        docs = self.retriever.search(query)
-        final_docs = self.reranker.get_final_docs(query, docs)
+        final_docs = self.retriever.search(query)
+        # final_docs = self.reranker.get_final_docs(query, docs)
 
         return formulate_prompt(query, final_docs)
     
