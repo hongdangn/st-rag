@@ -1,0 +1,7 @@
+google-generativeai
+langchain
+langchain-community
+os
+rank_bm25
+faiss-cpu
+streamlit
