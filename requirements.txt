@@ -5,3 +5,4 @@ langchain-community
 rank_bm25
 faiss-cpu
 streamlit
+PyPDF2
